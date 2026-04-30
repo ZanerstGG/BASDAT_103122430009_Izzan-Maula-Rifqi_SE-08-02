@@ -1,0 +1,69 @@
+SET SERVEROUTPUT ON;
+SET ECHO ON;
+SET LINESIZE 200;
+
+BEGIN EXECUTE IMMEDIATE 'DROP TABLE employees CASCADE CONSTRAINTS'; EXCEPTION WHEN OTHERS THEN NULL; END;
+/
+BEGIN EXECUTE IMMEDIATE 'DROP TABLE hremployees CASCADE CONSTRAINTS'; EXCEPTION WHEN OTHERS THEN NULL; END;
+/
+
+CREATE TABLE hremployees (
+    employee_id    NUMBER(6)      NOT NULL,
+    first_name     VARCHAR2(20),
+    last_name      VARCHAR2(25)   NOT NULL,
+    email          VARCHAR2(25)   NOT NULL,
+    phone_number   VARCHAR2(20),
+    hire_date      DATE           NOT NULL,
+    job_id         VARCHAR2(10)   NOT NULL,
+    salary         NUMBER(8,2),
+    commission_pct NUMBER(2,2),
+    manager_id     NUMBER(6),
+    department_id  NUMBER(4),
+    CONSTRAINT emp_emp_id_pk PRIMARY KEY (employee_id)
+);
+
+INSERT INTO hremployees VALUES (100, 'Steven',  'King',     'SKING',    '515.123.4567', TO_DATE('17-JUN-2003','DD-MON-YYYY'), 'AD_PRES', 24000, NULL, NULL, 90);
+INSERT INTO hremployees VALUES (101, 'Neena',   'Kochhar',  'NKOCHHAR', '515.123.4568', TO_DATE('21-SEP-2005','DD-MON-YYYY'), 'AD_VP',   17000, NULL, 100, 90);
+INSERT INTO hremployees VALUES (102, 'Lex',     'De Haan',  'LDEHAAN',  '515.123.4569', TO_DATE('13-JAN-2001','DD-MON-YYYY'), 'AD_VP',   17000, NULL, 100, 90);
+INSERT INTO hremployees VALUES (103, 'Alexander', 'Hunold',  'AHUNOLD',  '590.423.4567', TO_DATE('03-JAN-2006','DD-MON-YYYY'), 'IT_PROG',  9000,  NULL, 102, 60);
+INSERT INTO hremployees VALUES (104, 'Bruce',     'Ernst',   'BERNST',   '590.423.4568', TO_DATE('21-MAY-2007','DD-MON-YYYY'), 'IT_PROG',  6000,  NULL, 103, 60);
+INSERT INTO hremployees VALUES (107, 'Diana',     'Lorentz', 'DLORENTZ', '590.423.5567', TO_DATE('07-FEB-2007','DD-MON-YYYY'), 'IT_PROG',  4200,  NULL, 103, 60);
+INSERT INTO hremployees VALUES (124, 'Kevin',     'Mourgos', 'KMOURGOS', '650.123.5234', TO_DATE('16-NOV-2007','DD-MON-YYYY'), 'ST_MAN',   5800,  NULL, 100, 50);
+INSERT INTO hremployees VALUES (141, 'Trenna',    'Rajs',    'TRAJS',    '650.121.8009', TO_DATE('17-OCT-2003','DD-MON-YYYY'), 'ST_CLERK', 3500,  NULL, 124, 50);
+INSERT INTO hremployees VALUES (149, 'Eleni',     'Zlotkey', 'EZLOTKEY', '011.44.1344.429018', TO_DATE('29-JAN-2008','DD-MON-YYYY'), 'SA_MAN',   10500, .2, 100, 80);
+INSERT INTO hremployees VALUES (174, 'Ellen',     'Abel',    'EABEL',    '011.44.1644.429267', TO_DATE('11-MAY-2004','DD-MON-YYYY'), 'SA_REP',   11000, .3, 149, 80);
+COMMIT;
+
+
+CREATE TABLE employees AS SELECT * FROM hremployees;
+
+SELECT * FROM employees;
+
+CREATE OR REPLACE PROCEDURE increase_salary (
+    department_id_in IN employees.department_id%TYPE,
+    increase_pct_in IN NUMBER
+)
+IS
+BEGIN
+    FOR employee_rec IN (
+        SELECT employee_id 
+        FROM employees 
+        WHERE department_id = increase_salary.department_id_in
+    )
+    LOOP
+        UPDATE employees emp
+        SET emp.salary = emp.salary + (emp.salary * increase_salary.increase_pct_in)
+        WHERE emp.employee_id = employee_rec.employee_id;
+        
+        DBMS_OUTPUT.PUT_LINE ('Updated ' || SQL%ROWCOUNT);
+    END LOOP;
+END increase_salary;
+/
+
+BEGIN
+    increase_salary (90, .50);
+    ROLLBACK;
+END;
+/
+
+SELECT * FROM employees WHERE department_id = 90;
