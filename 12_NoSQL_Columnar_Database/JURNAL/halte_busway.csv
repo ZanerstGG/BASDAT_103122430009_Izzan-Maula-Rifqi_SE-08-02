@@ -1,0 +1,31 @@
+id_halte,nama_halte,koridor_utama,lokasi_lat,lokasi_lon,tipe_halte,fasilitas_toilet,fasilitas_mushola,status_operasional,alamat_lengkap,kecamatan,kota_administrasi
+H01,Blok M,1,-6.244,106.8,Ujung,true,true,Aktif,Jl. Sultan Hasanuddin,Kebayoran Baru,Jakarta Selatan
+H02,Bundaran HI,1,-6.192,106.823,Transit,true,false,Aktif,Jl. MH Thamrin,Menteng,Jakarta Pusat
+H03,Harmoni,1,-6.167,106.82,Sentral,true,true,Aktif,Jl. Gajah Mada,Gambir,Jakarta Pusat
+H04,Monas,1,-6.175,106.827,Reguler,false,false,Aktif,Jl. Medan Merdeka,Gambir,Jakarta Pusat
+H05,Kampung Melayu,5,-6.224,106.858,Sentral,true,true,Aktif,Terminal Kp Melayu,Jatinegara,Jakarta Timur
+H06,Ragunan,6,-6.311,106.82,Ujung,true,true,Aktif,Jl. Harsono RM,Pasar Minggu,Jakarta Selatan
+H07,Tosari,1,-6.197,106.823,Reguler,true,false,Aktif,Jl. Sudirman,Menteng,Jakarta Pusat
+H08,Lebak Bulus,8,-6.29,106.775,Ujung,true,true,Aktif,Jl. Pasar Jumat,Cilandak,Jakarta Selatan
+H09,Pulo Gadung,2,-6.182,106.9,Ujung,true,true,Aktif,Jl. Raya Bekasi,Pulo Gadung,Jakarta Timur
+H10,Kota,1,-6.137,106.814,Ujung,true,true,Aktif,Stasiun Kota,Taman Sari,Jakarta Barat
+H11,Pasar Baru,3,-6.166,106.829,Reguler,true,false,Aktif,Jl. Pos No. 1,Sawah Besar,Jakarta Pusat
+H12,Grogol 1,3,-6.167,106.788,Transit,true,true,Aktif,Jl. Kyai Tapa,Grogol Petamburan,Jakarta Barat
+H13,Pluit,9,-6.126,106.793,Ujung,true,false,Aktif,Jl. Pluit Permai,Penjaringan,Jakarta Utara
+H14,Matraman 1,5,-6.211,106.855,Transit,true,true,Aktif,Jl. Matraman Raya,Matraman,Jakarta Timur
+H15,Kuningan Timur,6,-6.231,106.827,Transit,true,false,Aktif,Jl. HR Rasuna Said,Setiabudi,Jakarta Selatan
+H16,Benhil,1,-6.216,106.818,Reguler,false,false,Aktif,Jl. Jend Sudirman,Tanah Abang,Jakarta Pusat
+H17,Senen,2,-6.175,106.843,Sentral,true,true,Aktif,Jl. Stasiun Senen,Senen,Jakarta Pusat
+H18,Gatot Subroto LIPI,9,-6.23,106.819,Reguler,true,false,Aktif,Jl. Gatot Subroto,Setiabudi,Jakarta Selatan
+H19,Tanjung Priok,10,-6.111,106.882,Ujung,true,true,Aktif,Jl. Taman Stasiun Priok,Tanjung Priok,Jakarta Utara
+H20,Manggarai,4,-6.209,106.849,Transit,true,true,Aktif,Jl. Sultan Agung,Tebet,Jakarta Selatan
+H21,Pancoran Barat,9,-6.242,106.838,Reguler,true,false,Aktif,Jl. Gatot Subroto,Pancoran,Jakarta Selatan
+H22,Cawang UKI,7,-6.249,106.87,Sentral,true,true,Aktif,Jl. Mayjen Sutoyo,Makasar,Jakarta Timur
+H23,Pulomas,2,-6.182,106.883,Reguler,false,false,Aktif,Jl. Perintis Kemerdekaan,Pulo Gadung,Jakarta Timur
+H24,Slipi Petamburan,9,-6.202,106.801,Reguler,true,false,Aktif,Jl. Letjen S. Parman,Tanah Abang,Jakarta Pusat
+H25,Ancol,5,-6.126,106.837,Ujung,true,true,Aktif,Jl. Lodan Raya,Pademangan,Jakarta Utara
+H26,Pinang Ranti,9,-6.289,106.892,Ujung,true,true,Aktif,Jl. Pondok Gede,Makasar,Jakarta Timur
+H27,Petamburan,3,-6.191,106.798,Transit,true,false,Aktif,Jl. Letjen S. Parman,Palmerah,Jakarta Barat
+H28,Dukuh Atas 1,1,-6.201,106.824,Transit,true,true,Aktif,Jl. Jend Sudirman,Setiabudi,Jakarta Selatan
+H29,Sawah Besar,1,-6.161,106.82,Reguler,false,false,Aktif,Jl. Gajah Mada,Sawah Besar,Jakarta Pusat
+H30,Ciledug,13,-6.233,106.73,Ujung,true,true,Aktif,Jl. Ciledug Raya,Ciledug,Tangerang

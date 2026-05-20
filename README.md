@@ -1,1 +1,0 @@
-# BASDAT_103122430009_Izzan-Maula-Rifqi_SE-08-02
